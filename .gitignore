@@ -1,0 +1,13 @@
+*.swp
+
+.west/
+.venv/
+
+bootloader/
+tools/
+zephyr/
+
+modules/**
+!modules/custom
+!modules/custom/**
+
