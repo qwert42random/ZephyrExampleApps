@@ -88,16 +88,29 @@ int init_gpio(struct Gpio gpio) {
 }
 
 int read_pin(struct Gpio gpio) {
-    volatile uint32_t *idr_addr = (uint32_t *) (gpio.reg + IDR_OFFSET);
+    volatile uint32_t *idr_addr;
+
+    if (gpio.mode == input) {
+        idr_addr = (uint32_t *) (gpio.reg + IDR_OFFSET);
+    } else if (gpio.mode == output) {
+        idr_addr = (uint32_t *) (gpio.reg + ODR_OFFSET);
+    } else {
+        return -1;
+    }
 
     return *idr_addr & (0b1 << gpio.pin);
 }
 
 int write_pin(struct Gpio gpio, int state) {
-    // TODO: Check if pin is output mode.
+    // TODO: Check if pin is output mode?
 
     // Write to ODR.
-    *((uint32_t *) (gpio.reg + ODR_OFFSET)) |= (state ? 0b1 : 0b0) << gpio.pin;
+    uint32_t *output_reg = (uint32_t *) (gpio.reg + ODR_OFFSET);
+    if (state) {
+        *output_reg |= (0b1 << gpio.pin);
+    } else {
+        *output_reg &= ~(0b1 << gpio.pin);
+    }
 
     return 0;
 }

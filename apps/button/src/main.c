@@ -22,15 +22,18 @@ int main(void) {
     };
 
     init_gpio(green);
-
     init_gpio(usr_button);
 
-    write_pin(green, 1);
+    int pin_state = 1;
+    write_pin(green, pin_state);
 
     while(1) {
         if (read_pin(usr_button)) {
             printf("Hello world\n");
-            k_msleep(100);
+            pin_state = !pin_state;
+            write_pin(green, pin_state);
+
+            k_msleep(300);
             while (read_pin(usr_button));
         }
     }
