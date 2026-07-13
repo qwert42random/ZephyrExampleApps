@@ -76,6 +76,9 @@ int init_gpio(struct Gpio gpio) {
         *((uint32_t *) (gpio_base_addr + MODER_OFFSET)) &= ~(0b11 << (gpio.pin * 2));
         *((uint32_t *) (gpio_base_addr + MODER_OFFSET)) |= (0b01 << (gpio.pin * 2));
 
+        // Set pull up/down/none.
+        *((uint32_t *) (gpio_base_addr + PUPDR_OFFSET)) &= ~(0b11);
+        *((uint32_t *) (gpio_base_addr + PUPDR_OFFSET)) |= gpio.pull;
 
     } else {
         return -1;
@@ -85,7 +88,9 @@ int init_gpio(struct Gpio gpio) {
 }
 
 int read_pin(struct Gpio gpio) {
-    return 0;
+    volatile uint32_t *idr_addr = (uint32_t *) (gpio.reg + IDR_OFFSET);
+
+    return *idr_addr & (0b1 << gpio.pin);
 }
 
 int write_pin(struct Gpio gpio, int state) {
