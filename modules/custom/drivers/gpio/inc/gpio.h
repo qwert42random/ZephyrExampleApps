@@ -46,4 +46,7 @@ int init_gpio(struct Gpio gpio);
 int read_pin(struct Gpio gpio);
 int write_pin(struct Gpio gpio, int state);
 
+// TODO: Test function delete later.
+int test_func(void) {
+
 #endif

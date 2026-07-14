@@ -115,3 +115,8 @@ int write_pin(struct Gpio gpio, int state) {
     return 0;
 }
 
+// TODO: Test function delete later.
+int test_func(void) {
+    return 42;
+}
+
