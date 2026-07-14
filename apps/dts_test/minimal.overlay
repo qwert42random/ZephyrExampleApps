@@ -1,0 +1,8 @@
+/ {
+    test0: test {
+        compatible = "custom,test"
+        first-var = 42;
+        second-var = 10;
+        status = "okay"
+    };
+};

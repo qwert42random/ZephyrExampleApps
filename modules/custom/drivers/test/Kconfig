@@ -1,6 +1,6 @@
 # Create a new option in menuconfig
-config CUSTOM_GPIO_DRIVER
-    bool "Custom GPIO"
+config TEST_DRIVER
+    bool "Add test driver"
     default n           # Set the driver to be disabled by default.
     help
-        Enable the custom button driver
+        Enable the test driver

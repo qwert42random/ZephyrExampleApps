@@ -3,7 +3,7 @@
 zephyr_library()
 
 # List source code files for library.
-zephyr_library_sources(src/gpio.c)
+zephyr_library_sources(src/test.c)
 
 # Add header files to CMake search directories.
 zephyr_include_directories(inc)

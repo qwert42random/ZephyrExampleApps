@@ -7,10 +7,10 @@ compatible: "custom,test"
 
 # Define the required node properties
 properties:
-  firstVar:
+  first-var:
     type: int
     required: true
-  secondVar:
+  second-var:
     type: int
     required: true
 

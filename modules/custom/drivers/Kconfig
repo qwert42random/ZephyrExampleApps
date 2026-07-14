@@ -1,0 +1,2 @@
+rsource "gpio/Kconfig"
+rsource "test/Kconfig"
