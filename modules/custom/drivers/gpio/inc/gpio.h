@@ -1,5 +1,5 @@
-#ifndef GPIO_H
-#define GPIO_H
+#ifndef ZEPHYR_DRIVERS_GPIO_H_
+#define ZEPHYR_DRIVERS_GPIO_H_
 
 enum PinMode {
     input = 0b00,
@@ -36,10 +36,10 @@ struct Gpio {
     int pin;
     enum Pull pull;
 
+    enum OutputType output;
+
     // TODO: This needs to be implemented.
     enum PinMode mode;
-
-    enum OutputType output;
 };
 
 int init_gpio(struct Gpio gpio);
