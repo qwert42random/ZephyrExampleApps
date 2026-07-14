@@ -1,9 +1,9 @@
 # Description of the device
-description: Custom button
+description: Custom GPIO
 
 # Compatibility string that matches the one in the Devicetree source and
 # DT_DRV_COMPAT macro in the driver source code
-compatible: "usr,button"
+compatible: "custom,gpio"
 
 # Define the required node properties
 properties:

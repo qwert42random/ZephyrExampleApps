@@ -1,3 +1,6 @@
+// Ties to the 'compatible = "custom,gpio"' node in the Device tree.
+#define DT_DRV_COMPAT custom_gpio
+
 #include <stdint.h>
 
 #include "gpio.h"
@@ -116,7 +119,8 @@ int write_pin(struct Gpio gpio, int state) {
 }
 
 // TODO: Test function delete later.
-int test_func(void) {
-    return 42;
+int test_func(struct test_config, uint32_t *output) {
+    *output = test_config.firstVar + test_config.secondVar;
+    return 0;
 }
 
