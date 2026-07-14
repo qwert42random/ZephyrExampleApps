@@ -1,6 +1,3 @@
-// Ties to the 'compatible = "custom,test"' node in the Device tree.
-#define DT_DRV_COMPAT custom_test
-
 #include <stdint.h>
 #include <stdio.h>
 

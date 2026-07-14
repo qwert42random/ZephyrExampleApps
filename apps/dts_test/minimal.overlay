@@ -1,8 +1,22 @@
 / {
     test0: test {
-        compatible = "custom,test"
-        first-var = 42;
-        second-var = 10;
-        status = "okay"
+        compatible = "custom,test";
+        first-var = <42>;
+        second-var = <10>;
+        status = "okay";
     };
+
+    test1: test_thing {
+        compatible = "custom,compatible";
+        status = "disabled";
+    };
+
+    test2: test_gpio@40020c00 {
+        compatible = "st,stm32-gpio";
+        gpio-controller;
+        #gpio-cells = <2>;
+        reg = <0x40020c00 0x400>;
+        clocks = <&rcc STM32_CLOCK(AHB1, 3)>;
+        status = "okay";
+    };   
 };

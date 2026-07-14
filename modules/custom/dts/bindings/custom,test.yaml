@@ -13,4 +13,7 @@ properties:
   second-var:
     type: int
     required: true
+  third-var:
+    type: int
+    required: false
 
