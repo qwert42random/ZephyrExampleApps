@@ -1,5 +1,3 @@
-*.swp
-
 .west/
 .venv/
 
@@ -13,3 +11,4 @@ modules/**
 !modules/custom
 !modules/custom/**
 
+*.swp
