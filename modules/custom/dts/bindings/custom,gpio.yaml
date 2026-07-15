@@ -7,6 +7,36 @@ compatible: "custom,gpio"
 
 # Define the required node properties
 properties:
-  pin:
-    type: phandle
+  gpio_port:
+    type: string
     required: true
+    enum:
+      - "A"
+      - "B"
+      - "C"
+      - "D"
+      - "E"
+      - "F"
+      - "G"
+      - "H"
+      - "I"
+      - "J"
+
+  pin:
+    type: int
+    required: true
+  
+  pull_type:
+    type: string
+    required: true
+    enum:
+      - "none"
+      - "pull_up"
+      - "pull_down"
+  
+  output:
+    type: string
+    required: true
+    enum:
+      - "input"
+      - "output"

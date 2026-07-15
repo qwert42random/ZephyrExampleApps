@@ -118,9 +118,3 @@ int write_pin(struct Gpio gpio, int state) {
     return 0;
 }
 
-// TODO: Test function delete later.
-int test_func(struct test_config, uint32_t *output) {
-    *output = test_config.firstVar + test_config.secondVar;
-    return 0;
-}
-

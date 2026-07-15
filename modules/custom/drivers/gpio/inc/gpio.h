@@ -1,6 +1,7 @@
 #ifndef ZEPHYR_DRIVERS_GPIO_H_
 #define ZEPHYR_DRIVERS_GPIO_H_
 
+// TODO: Try and figure out why this is necessary.
 // Ties to the 'compatible = "custom,gpio" node in DeviceTree.
 #define DT_DRV_COMPAT custom_gpio
 
@@ -39,23 +40,14 @@ struct Gpio {
     int pin;
     enum Pull pull;
 
-    enum OutputType output;
+    enum PinMode mode;
 
     // TODO: This needs to be implemented.
-    enum PinMode mode;
+    enum OutputType output;
 };
 
 int init_gpio(struct Gpio gpio);
 int read_pin(struct Gpio gpio);
 int write_pin(struct Gpio gpio, int state);
-
-// TODO: Delete this later when done.
-struct test_config {
-    int firstVar;
-    int secondVar;
-};
-
-// TODO: Test function delete later.
-int test_func(struct test_config test, uint32_t *output);
 
 #endif

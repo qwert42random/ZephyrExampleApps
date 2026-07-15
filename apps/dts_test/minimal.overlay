@@ -19,6 +19,22 @@
             status = "okay";
         };
 
+        button {
+            compatible = "custom,gpio";
+            gpio_port = "A";
+            pin = <0>;
+            pull_type = "pull_down";
+            output = "input";
+        };
+
+        green_light {
+            compatible = "custom,gpio";
+            gpio_port = "D";
+            pin = <12>;
+            pull_type = "pull_down";
+            output = "output";
+        };
+
         test3: test@40020c00 {
             compatible = "st,stm32-gpio";
             gpio-controller;
