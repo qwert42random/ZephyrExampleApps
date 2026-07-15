@@ -3,9 +3,8 @@
 
 #include "test.h"
 
-int test_func(struct test_config config, uint32_t *output) {
-    *output = config.firstVar + config.secondVar;
-    return 0;
+int test_func(struct test_config config) {
+    return config.firstVar + config.secondVar;
 }
 
 int test_print(void) {

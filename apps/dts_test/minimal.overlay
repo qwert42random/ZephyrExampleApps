@@ -1,22 +1,31 @@
 / {
-    test0: test {
-        compatible = "custom,test";
-        first-var = <42>;
-        second-var = <10>;
-        status = "okay";
-    };
-
-    test1: test_thing {
+    test {
         compatible = "custom,compatible";
-        status = "disabled";
-    };
-
-    test2: test_gpio@40020c00 {
-        compatible = "st,stm32-gpio";
-        gpio-controller;
-        #gpio-cells = <2>;
-        reg = <0x40020c00 0x400>;
-        clocks = <&rcc STM32_CLOCK(AHB1, 3)>;
+        #address-cells = <1>;
+        #size-cells = <1>;
         status = "okay";
-    };   
+
+        test1: test_1 {
+            compatible = "custom,test";
+            first-var = <42>;
+            second-var = <10>;
+            status = "okay";
+        };
+
+        test2: test_2 {
+            compatible = "custom,test";
+            first-var = <17>;
+            second-var = <29>;
+            status = "okay";
+        };
+
+        test3: test@40020c00 {
+            compatible = "st,stm32-gpio";
+            gpio-controller;
+            #gpio-cells = <2>;
+            reg = <0x40020c00 0x400>;
+            clocks = <&rcc STM32_CLOCK(AHB1, 3)>;
+            status = "okay";
+        };
+    };
 };
