@@ -34,14 +34,5 @@
             pull_type = "pull_down";
             output = "output";
         };
-
-        test3: test@40020c00 {
-            compatible = "st,stm32-gpio";
-            gpio-controller;
-            #gpio-cells = <2>;
-            reg = <0x40020c00 0x400>;
-            clocks = <&rcc STM32_CLOCK(AHB1, 3)>;
-            status = "okay";
-        };
     };
 };
