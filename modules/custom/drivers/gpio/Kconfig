@@ -2,5 +2,6 @@
 config GPIO_DRIVER
     bool "GPIO driver"
     default n           # Set the driver to be disabled by default.
+    depends on DT_HAS_CUSTOM_GPIO_ENABLED
     help
-        Enable the custom button driver
+        Enable the example GPIO driver

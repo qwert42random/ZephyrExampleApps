@@ -1,6 +1,26 @@
 # Create a new option in menuconfig
-config TEST_DRIVER
-    bool "Add test driver"
-    default n           # Set the driver to be disabled by default.
+# menu "Test driver options"
+
+# menu "Test driver configurations"
+#     depends on DT_HAS_CUSTOM_TEST_ENABLED
+
+menuconfig TEST_DRIVER
+    bool "Use test drivers"
+    depends on DT_HAS_CUSTOM_TEST_ENABLED
     help
-        Enable the test driver
+        Import test drivers
+
+if TEST_DRIVER
+
+config ALT_PRINT_FUNC
+    bool "Use alt print function"
+    default n
+    help
+        Use alternative print function.
+
+config ALT_TEST_FUNC
+    bool "Use alt test function"
+    default n
+    help
+        Use alternative test function.
+endif

@@ -1,4 +1,5 @@
 #include <zephyr/kernel.h>
+#include <zephyr/app_version.h>
 #include <stdio.h>
 
 #include "test.h"
@@ -36,6 +37,8 @@ int main(void) {
 
             pin_state = !pin_state;
             write_pin(green, pin_state);
+
+            printf("Version number: %s\n", APP_VERSION_EXTENDED_STRING);
 
             printf("First test config: %d\n", test_func(first_test_config));
             printf("Second test config: %d\n", test_func(second_test_config));
