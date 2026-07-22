@@ -1,10 +1,6 @@
 #ifndef ZEPHYR_DRIVERS_GPIO_H_
 #define ZEPHYR_DRIVERS_GPIO_H_
 
-// TODO: Try and figure out why this is necessary.
-// Ties to the 'compatible = "custom,gpio" node in DeviceTree.
-#define DT_DRV_COMPAT custom_gpio
-
 enum PinMode {
     input = 0b00,
     output = 0b01
