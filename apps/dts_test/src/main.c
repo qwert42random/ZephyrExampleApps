@@ -38,6 +38,8 @@ int main(void) {
             pin_state = !pin_state;
             write_pin(green, pin_state);
 
+            // APP_VERSION_EXTENDED_STRING is a macro provided by Zephyr.
+            // It is the extended string version format as read in VERSION file.
             printf("Version number: %s\n", APP_VERSION_EXTENDED_STRING);
 
             printf("First test config: %d\n", test_func(first_test_config));
