@@ -1,0 +1,19 @@
+# Description of the device
+description: Example device tree binding
+
+# Compatibility string that matches the one in the Devicetree source and
+# DT_DRV_COMPAT macro in the driver source code
+compatible: "example,test"
+
+# Define the required node properties
+properties:
+  first-var:
+    type: int
+    required: true
+  second-var:
+    type: int
+    required: true
+  third-var:
+    type: int
+    required: false
+
