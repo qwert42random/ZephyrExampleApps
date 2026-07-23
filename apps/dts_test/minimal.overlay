@@ -1,9 +1,5 @@
 / {
     test {
-        compatible = "custom,compatible";
-        #address-cells = <1>;
-        #size-cells = <1>;
-        status = "okay";
 
         test1: test_1 {
             compatible = "custom,test";
