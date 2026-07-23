@@ -12,11 +12,11 @@ config ALT_PRINT_FUNC
     bool "Use alt print function"
     default n
     help
-        Use alternative print function.
+        Use alternative print function
 
-config ALT_TEST_FUNC
-    bool "Use alt test function"
+config DUMMY_TEST_FUNC
+    bool "Use dummy test function"
     default n
     help
-        Use alternative test function.
+        This does nothing
 endif

@@ -9,7 +9,7 @@ void test_func(struct test_config config) {
     return;
 }
 
-#ifdef CONFIG_ALT_TEST_FUNC
+#ifndef CONFIG_ALT_PRINT_FUNC
 void test_print(void) {
     printf("Hello world\n");
     return;
