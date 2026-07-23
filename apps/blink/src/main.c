@@ -3,7 +3,6 @@
 #include <zephyr/devicetree.h>
 #include <zephyr/drivers/gpio.h>
 
-// static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(DT_PATH(leds, led1), gpios);
 static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(DT_ALIAS(led0), gpios);
 
 int main(void) {

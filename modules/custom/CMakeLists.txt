@@ -1,3 +1,3 @@
-add_subdirectory(drivers)
+add_subdirectory_ifdef(CONFIG_GPIO_DRIVER drivers/gpio)
+add_subdirectory_ifdef(CONFIG_TEST_DRIVER drivers/test)
 
-zephyr_include_directories(drivers)

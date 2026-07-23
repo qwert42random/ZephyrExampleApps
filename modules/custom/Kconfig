@@ -1,1 +1,2 @@
-rsource "drivers/Kconfig"
+rsource "drivers/gpio/Kconfig"
+rsource "drivers/test/Kconfig"
