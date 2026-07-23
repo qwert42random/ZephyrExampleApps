@@ -1,0 +1,18 @@
+/ {
+    test {
+        test1: test_1 {
+            compatible = "example,test";
+            first-var = <42>;
+            second-var = <10>;
+            status = "okay";
+        };
+
+        test2: test_2 {
+            compatible = "example,test";
+            first-var = <17>;
+            second-var = <29>;
+            status = "okay";
+        };
+    };
+};
+

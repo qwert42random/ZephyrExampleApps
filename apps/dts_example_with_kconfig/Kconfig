@@ -1,0 +1,22 @@
+source "Kconfig.zephyr"
+
+menuconfig TEST_DRIVER
+    bool "Use test drivers"
+    depends on DT_HAS_EXAMPLE_TEST_ENABLED
+    help
+        Import test drivers
+
+if TEST_DRIVER
+
+config ALT_PRINT_FUNC
+    bool "Use alt print function"
+    default n
+    help
+        Use alternative print function.
+
+config ALT_TEST_FUNC
+    bool "Use alt test function"
+    default n
+    help
+        Use alternative test function.
+endif
