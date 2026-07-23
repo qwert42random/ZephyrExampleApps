@@ -1,0 +1,1 @@
+add_subdirectory_ifdef(CONFIG_GPIO_DRIVER gpio_drivers)
